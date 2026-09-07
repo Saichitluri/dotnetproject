@@ -15,8 +15,13 @@ jobs:
                 creds: ${{ secrets.AZURE_CREDENTIALS }}
             - name: Terraform init
               run: |
+                cd Terraform
                 terraform init
             - name: Terraform plan
+              run: |
+                cd Terraform
+                terraform plan
+            - name: Terraform apply
               run: |
                 cd Terraform
                 terraform apply -auto-approve
